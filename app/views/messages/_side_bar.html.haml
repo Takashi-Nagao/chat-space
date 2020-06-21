@@ -1,1 +1,26 @@
-<サイドバー>
+.Side-bar
+  .Side-bar__Left-header
+    .Side-bar__Left-header__List
+      %h3.Left-header-name
+        hogehoge
+      %ul.Left-header-icons
+        %li.icon
+          =link_to '#', class: "edit" do
+            = icon('fas', 'edit')
+        %li.icon
+          =link_to '#', class: "edit" do
+            = icon('fas', 'cog')
+  .Side-bar__Group-list
+    .Side-bar__Group-list__Chat-group
+      =link_to '#', class: 'group-link' do
+        %h4.Chat-group__Name
+          techcamp
+        %p.Chat-group__Message
+          まだメッセージがありません
+    .Side-bar__Group-list__Chat-group
+      =link_to '#', class: 'group-link' do
+        %h4.Chat-group__Name
+          techcamp
+        %p.Chat-group__Message
+          まだメッセージがありません
+
