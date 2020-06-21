@@ -24,6 +24,10 @@ Things you may want to cover:
 * ...
 
 ```README.md
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 ## usersテーブル
 
 |Column|Type|Options|
@@ -34,7 +38,11 @@ Things you may want to cover:
 ### Association
 - has_many :messages
 - has_many :group_users
+<<<<<<< Updated upstream
 - has_many :groups, through: :group_users
+=======
+- has_many :groups, through: groups_users
+>>>>>>> Stashed changes
 
 ## messagesテーブル
 
@@ -53,12 +61,20 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
+<<<<<<< Updated upstream
 |name|string|null: false, unique: true|
+=======
+|group_name|string|null: false, unique: true|
+>>>>>>> Stashed changes
 
 ### Association
 - has_many :messages
 - has_many :groups_users
+<<<<<<< Updated upstream
 - has_many :users, through: :groups-user
+=======
+- has_many :users, through: groups_users
+>>>>>>> Stashed changes
 
 ## groups-userテーブル
 
