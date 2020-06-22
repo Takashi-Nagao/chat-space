@@ -2,13 +2,13 @@
   .Side-bar__Left-header
     .Side-bar__Left-header__List
       %h3.Left-header-name
-        hogehoge
+        = current_user.name
       %ul.Left-header-icons
         %li.icon
           =link_to '#', class: "edit" do
             = icon('fas', 'edit')
         %li.icon
-          =link_to '#', class: "edit" do
+          =link_to edit_user_path(current_user), class: "edit" do
             = icon('fas', 'cog')
   .Side-bar__Group-list
     .Side-bar__Group-list__Chat-group
