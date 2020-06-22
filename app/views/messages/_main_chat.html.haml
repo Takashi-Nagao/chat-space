@@ -1,0 +1,32 @@
+.Chat-main
+  .Chat-main__Group-info
+    .Chat-main__Group-info__Rightheader-group
+      %h3.group-name
+        techcamp
+      %ul.right-header-detail
+        %li.right-header-group-member
+          Member :
+        %li.right-header-group-name
+          foo
+    .Chat-main__Group-info__Rightheader-btn
+      =link_to "#", class: "edit-btn" do
+        Edit
+  .Chat-main__Post-lists
+    .Chat-main__Post-lists__Post-list
+      .Chat-main__Post-lists__Post-list__Post-detail
+        %h3.contributor
+          masa
+        %p.post-content
+          2019/11/20(Wed) 17:43:01
+      %p.post-message
+        おはよう!
+  .Chat-main__Post-box
+    .Chat-main__Post-box__Post-form
+      .Chat-main__Post-box__Post-form__Form-contents
+        =form_for("#") do |form|
+          =form.text_field :content, class: 'input-text', placeholder: "type a message"
+      .Chat-main__Post-box__Post-form__Form-contents__Form-input
+        %label{class: "input-box__image"}
+          =icon('far', 'image')
+          %input{type: "file", class: "file-box"}
+    %input.input-btn{type: "submit", :value => "Send"}
