@@ -1,32 +1,26 @@
 .Chat-main
   .Chat-main__Group-info
-    .Chat-main__Group-info__Rightheader-group
-      %h3.group-name
-        techcamp
-      %ul.right-header-detail
-        %li.right-header-group-member
-          Member :
-        %li.right-header-group-name
-          foo
+    .Chat-main__Group-info__Right-header
+      .Chat-main__Group-info__Right-header__Group-name
+        = @group.name
+      .Chat-main__Group-info__Right-header__Group-member
+        %ul
+          %li.member-display Member:
+          - @group.users.each do |user|
+            = user.name
     .Chat-main__Group-info__Rightheader-btn
-      =link_to "#", class: "edit-btn" do
+      = link_to edit_group_path(@group), class: "edit-btn" do
         Edit
   .Chat-main__Post-lists
     .Chat-main__Post-lists__Post-list
       .Chat-main__Post-lists__Post-list__Post-detail
-        %h3.contributor
-          masa
-        %p.post-content
-          2019/11/20(Wed) 17:43:01
-      %p.post-message
-        おはよう!
-  .Chat-main__Post-box
-    .Chat-main__Post-box__Post-form
-      .Chat-main__Post-box__Post-form__Form-contents
-        =form_for("#") do |form|
-          =form.text_field :content, class: 'input-text', placeholder: "type a message"
-      .Chat-main__Post-box__Post-form__Form-contents__Form-input
-        %label{class: "input-box__image"}
-          =icon('far', 'image')
-          %input{type: "file", class: "file-box"}
-    %input.input-btn{type: "submit", :value => "Send"}
+        .MessageField
+          = render @messages
+  .Chat-main__Footer
+    = form_with model: [@group, @message], html: {class: "Form"}, local: true do |f|
+      .Form__contents
+        = f.text_field :content, class: 'Form__inputContent', placeholder: 'type a message'
+        = f.label :image, class: 'Form__inputImage' do
+          = icon('far', 'image', class: 'Form__icon')
+          = f.file_field :image, class: 'Hidden'
+      = f.submit 'Send', class: 'Form__submit'

@@ -68,24 +68,30 @@
       border-bottom: 1px solid #eeeeee;
       display: flex;
       justify-content: space-between;
-      &__Rightheader-group{
+      &__Right-header{
         padding-top: 35px;
-        h3{
+        &____Group-name{
           display: block;
           font-size: 20px;
           color: #333333;
         }
-        ul{
-          font-size: 13px;
-          margin-top: 15px;
+        &__Group-member{
           color: #999999;
           display: flex;
-          .right-header-group-member{
+          .member-display{
             font-size: 12px;
           }
-          .right-header-group-name{
+          ul{
             font-size: 13px;
-            margin-left: 5px;
+            margin-top: 15px; 
+            display: flex;        
+            .right-header-group-member{
+              font-size: 12px;
+            }
+            .user-name{
+              font-size: 13px;
+              margin-left: 5px;
+            }
           }
         }
       }
@@ -96,60 +102,52 @@
     }
     &__Post-lists{
       height: calc(100vh - 90px - 100px);
-      background-color: #fafafa;
-      padding-top: 35px;
-      &__Post-list{
-        margin-left: 40px;
-        &__Post-detail{
-          display: flex;
-          margin-bottom: 12px;
-          h3{
-            color: #333333;
-            font-size: 16px;
-            font-weight: bold;
-          }
-          p.post-content{
-            font-size: 12px;
-            color: #999999;
-            margin-left: 15px;
+      overflow: scroll;
+      background-color:  #fafafa;;
+      .MessageBox{
+        background-color: #fafafa;
+        padding-top: 35px;
+        .MessageInfo{
+          margin-left: 40px;
+          .MessageName{
+            display: flex;
+            .MessageName__userName{
+              color: #434a54;
+              font-size: 16px;
+              font-weight: bold;
+            }
           }
         }
-      p.post-message{
-        font-size: 14px;
-        color: #434A54;
-        margin-bottom: 12px;
-      }
       }
     }
-    &__Post-box{
-      height: 90px;
+    &__Footer{
       background-color: #d2d2d2;
-      display: flex;
-      align-items: center;
+      box-sizing: border-box;
+      height: 90px;
       padding: 20px 50px 20px 40px;
-      &__Post-form{
-        background-color: #ffffff;
-        height: 50px;
-        width: 100%;
+      .Form{
         display: flex;
         justify-content: space-between;
-        align-items: center;
-        border: none;
-        position: relative;
-        &__Form-contents{
+        .Form__contents{
           width: 100%;
-          .input-text{
+          background-color: #fff;
+          position: relative;
+          .Form__inputContent{
             border: none;
             height: 50px;
             padding: 0 45px 0 15px;
             width: 100%;
           }
-          &__Form-input{
+          .Form__inputImage{
             position: absolute;
             right: 10px;
-            border: none;
-            .fa-image{
+            height: 50px;
+            .Form__icon{
               font-size: 25px;
+              line-height: 50px;
+            }
+            .Hidden{
+              display: none;
             }
           }
         }
@@ -158,28 +156,41 @@
   }
 }
 
-.input-btn{
-  background-color: #38aef0;
-  height: 50px;
-  padding: 0 30px;
-  margin-left: 15px;
-  color: #ffffff;
-  border: none;
-}
-
 .edit-btn{
   display: block;
-  font-size: 16px;
-  color: #38aef0;
-  text-decoration: none;
-  border: 1px solid #38aef0;
+  border: 1px solid #38AEF0;
+  color: #38AEF0;
   height: 40px;
-  width: 72px;
-  display: flex;
-  align-items: center;
+  line-height: 40px;
   padding: 0 20px;
+  text-decoration: none;
+}
+
+.Form__submit{
+  background-color: #38AEF0;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  height: 50px;
+  margin-left: 15px;
+  padding: 0 30px;
 }
 
 .file-box{
   display: none;
+}
+
+.Message{
+  margin-top: 12px;
+}
+
+.MessageName__date{
+  color: #999;
+  font-size: 12px;
+  padding-left: 10px;
+}
+
+.Message__content{
+  font-size: 14px;
+  color: #434A54;
 }
