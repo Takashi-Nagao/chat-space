@@ -45,6 +45,7 @@ $(function(){
   }
 
   $('.Form').on('submit', function(e){
+    console.log("a");
     e.preventDefault();
     let formData = new FormData(this);
     let url = $(this).attr('action');
@@ -57,6 +58,7 @@ $(function(){
       contentType: false
     })
     .done(function(data){
+      console.log(data);
       let html = buildHTML(data);
       $('.Chat-main__Post-lists').append(html); 
       $('form')[0].reset();
